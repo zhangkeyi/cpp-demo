@@ -8,6 +8,8 @@ namespace foo
     }
 }
 
+// namespace aliasing
+namespace newfoo = foo;
 namespace bar
 {
     const double pi = 3.1416;
@@ -17,6 +19,7 @@ namespace bar
 int main () 
 {
     std::cout << foo::value() << std::endl;
+    std::cout << newfoo::value() << std::endl;
     std::cout << bar::value() << std::endl;
     std::cout << bar::pi << std::endl;
     return 0;
