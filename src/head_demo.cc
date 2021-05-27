@@ -5,8 +5,9 @@ using namespace std;
 
 moive_t::moive_t (const char * title, int year) 
 {
-    title = title;
-    year = year;
+    // 为啥这个一定得this指针
+    this -> title = title;
+    this -> year = year;
 }
 
 moive_t::~moive_t () 
@@ -24,14 +25,12 @@ int main ()
 {
 
     const char * title = "any";
-
-    cout << "=====" << title[1] << endl;
-
     moive_t moive (title, 2021);
 
     moive_t * p = &moive;
 
     p -> print();
+    moive.print();
 
     return 0;
 }
